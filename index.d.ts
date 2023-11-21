@@ -96,7 +96,7 @@ declare namespace WAWebJS {
         getWWebVersion(): Promise<string>
 
         /** Sets up events and requirements, kicks off authentication request */
-        initialize(): Promise<void>
+        initialize(auth_method: number): Promise<void>
 
         /** Check if a given ID is registered in whatsapp */
         isRegisteredUser(contactId: string): Promise<boolean>
@@ -660,6 +660,7 @@ declare namespace WAWebJS {
         GROUP_MEMBERSHIP_REQUEST = 'group_membership_request',
         GROUP_UPDATE = 'group_update',
         QR_RECEIVED = 'qr',
+        CODE_RECEIVED = 'code',
         LOADING_SCREEN = 'loading_screen',
         DISCONNECTED = 'disconnected',
         STATE_CHANGED = 'change_state',

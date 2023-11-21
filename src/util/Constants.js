@@ -1,3 +1,5 @@
+/*eslint linebreak-style: ["error", "windows"]*/
+
 'use strict';
 
 exports.WhatsWebURL = 'https://web.whatsapp.com/';
@@ -59,6 +61,7 @@ exports.Events = {
     GROUP_MEMBERSHIP_REQUEST: 'group_membership_request',
     GROUP_UPDATE: 'group_update',
     QR_RECEIVED: 'qr',
+    CODE_RECEIVED: 'code',
     LOADING_SCREEN: 'loading_screen',
     DISCONNECTED: 'disconnected',
     STATE_CHANGED: 'change_state',
