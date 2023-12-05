@@ -37,7 +37,7 @@ const NoAuth = require('./authStrategies/NoAuth');
  * @param {object} options.proxyAuthentication - Proxy Authentication object.
  * 
  * @fires Client#qr
- * * @fires Client#code
+ * @fires Client#code
  * @fires Client#authenticated
  * @fires Client#auth_failure
  * @fires Client#ready
@@ -260,8 +260,6 @@ class Client extends EventEmitter {
 
                 // Mutation observer
                 await page.exposeFunction('codeChanged', async (code) => {
-                    //alert('page.exposeFunction => qrChanged');
-
                     /**
                     * Emitted when a code is received
                     * @event Client#code

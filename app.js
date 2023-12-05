@@ -69,7 +69,7 @@ mongoose.connect(process.env.MONGODB_URI_LOCAL).then(() => {
     console.log('DB Connected');
     store = new MongoStore({ mongoose: mongoose });
     const client = new Client({
-        puppeteer: { 
+        puppeteer: {
             headless: false
         },
         authStrategy: new RemoteAuth({
@@ -78,6 +78,8 @@ mongoose.connect(process.env.MONGODB_URI_LOCAL).then(() => {
             backupSyncIntervalMs: 60000
         })
     });
+
+    client.initialize(1);
 
     // client.on('qr', qr => {
     //     console.log('Get qr and generate');
@@ -89,17 +91,15 @@ mongoose.connect(process.env.MONGODB_URI_LOCAL).then(() => {
         console.log(code);
     });
 
-    client.on('authenticated',() =>{
+    client.on('authenticated', () => {
         console.log('Authenticated');
-    } );
+    });
 
-    client.on('ready', async() => {
+    client.on('ready', async () => {
         console.log('Client is ready');
     });
- 
-    client.on('remote_session_saved', () =>{
+
+    client.on('remote_session_saved', () => {
         console.log('Saved session!!');
     });
-
-    client.initialize(1);
 });
